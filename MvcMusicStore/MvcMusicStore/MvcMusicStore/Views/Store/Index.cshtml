@@ -7,10 +7,13 @@
     Select from @Model.Count()
     genres:
 </p>
-<ul>
-    @foreach (var genre in Model)
-    {
-        <li>@genre.Name</li>
-    }
-</ul>
+    <ul>
+        @foreach (var genre in Model)
+        {
+            <li>
+                @Html.ActionLink(genre.Name,
+"Browse", new { genre = genre.Name })
+        </li>
+        }
+    </ul>
 
